@@ -131,7 +131,7 @@ func main() {
 
 			writer.WriteHeader(header)
 
-			_, err := io.Copy(writer, reader)
+			_, err = io.Copy(writer, reader)
 			if err != nil {
 				panic(err)
 			}
