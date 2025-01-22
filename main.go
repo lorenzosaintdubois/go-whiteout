@@ -140,5 +140,10 @@ func main() {
 				fun(writer)
 			}
 		}
+
+		err := writer.Close()
+		if err != nil {
+			panic(err)
+		}
 	}
 }
