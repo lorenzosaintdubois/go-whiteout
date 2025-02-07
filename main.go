@@ -52,7 +52,9 @@ func main() {
 			base := filepath.Base(path)
 			dirn := filepath.Dir(path) + "/"
 
-			if base == ".wh..wh..opq" {
+			if strings.HasPrefix(path+"/", ".exclude/") || strings.HasPrefix(path+"/", "/.exclude/") || strings.HasPrefix(path+"/", "./.exclude/") {
+				append_suppress(path)
+			} else if base == ".wh..wh..opq" {
 				append_suppress(path)
 
 				append_transfer(dirn, (func(header *tar.Header) {
